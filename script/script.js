@@ -22,8 +22,6 @@ function updateCartCount() {
     }
 }
 
-// Resto de las funciones permanecen igual...
-
 // Agregar producto al carrito
 function addToCart(product) {
     const existingItem = cart.find(item => item.id === product.id);
@@ -43,15 +41,7 @@ function addToCart(product) {
     
     updateCartCount();
     updateCartDisplay();
-    
-    // Mostrar mensaje de éxito (opcional)
-    showAddToCartMessage(product.title);
-}
 
-// Mostrar mensaje de producto agregado
-function showAddToCartMessage(productTitle) {
-    // Aquí puedes agregar un toast o alert
-    console.log(`${productTitle} agregado al carrito`);
 }
 
 // Actualizar display del carrito en el modal
@@ -64,7 +54,9 @@ function updateCartDisplay() {
     if (cart.length === 0) {
         cartItems.innerHTML = `
             <div class="empty-cart text-center py-4">
-                <i class="fas fa-shopping-cart fa-3x text-muted mb-3"></i>
+                <div class="cart-icon-modal">
+                    <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                </div>
                 <h4>Tu carrito está vacío</h4>
                 <p class="text-muted">Agrega productos para comenzar tu compra</p>
             </div>

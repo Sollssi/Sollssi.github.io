@@ -10,16 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="../imagenes/iconos/logocorto.png">
 
-    <style>
-        /* Ajustes para el breadcrumb */
-        .breadcrumb-section {
-            background-color: #f5f1ec;
-            border-bottom: 1px solid #e8ddd0;
-        }
-    </style>
 </head>
 <body>
-    <!-- Barra promocional -->
     <div class="promo-bar">
         <div class="container-fluid">
             <div class="row">
@@ -33,39 +25,34 @@
     </div>
    <header>
    <div class="header-container">
-        <!-- Menú hamburguesa (solo visible en móvil) -->
         <button class="hamburger-menu d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
             <span class="hamburger-line"></span>
         </button>
         
-        <!-- Logo centrado en móvil -->
         <div class="logo">
             <a href="index.html">
                 <img src="../imagenes/iconos/logo2.png" alt="Logo Tienda de Muebles">
             </a>
         </div>
         
-       <!-- Navegación colapsable -->
         <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
             <nav class="nav-menu">
-                <a href="#">Línea Cocina</a>
-                <a href="#">Línea Living</a>
+                <a href="index.html">Inicio</a>
+                <a href="mueblesLiving.html">Línea Living</a>
                 <a href="#">Línea Comedor</a>
                 <a href="#">Línea Dormitorio</a>
                 <a href="#">Línea Oficina</a>
-                <a href="#ofertas">Ofertas</a>
+                <a href="index.html#ofertas">Ofertas</a>
             </nav>
         </div>
 
-        <!-- Buscador (solo en desktop) -->
         <div class="search-container d-none d-lg-flex">
             <input type="text" placeholder="Buscar productos..." class="search-bar">
             <img src="../imagenes/iconos/simbolo-de-la-interfaz-de-busqueda.png" alt="Buscar" class="search-icon">
         </div>
 
-         <!-- Iconos móviles (buscador + carrito) -->
          <div class="mobile-icons d-lg-none">
             <div class="search-icon-mobile" data-bs-toggle="modal" data-bs-target="#searchModal">
                 <img src="../imagenes/iconos/simbolo-de-la-interfaz-de-busqueda.png" alt="Buscar">
@@ -78,7 +65,6 @@
             </div>
         </div>
 
-        <!-- Carrito desktop -->
         <div class="cart-container d-none d-lg-flex">
             <div class="cart-section" data-bs-toggle="modal" data-bs-target="#cartModal">
                 <div class="cart-icon">
@@ -90,7 +76,6 @@
         </div>
     </div>
 </header>
-    <!-- BREADCRUMB -->
     <section class="breadcrumb-section">
         <div class="container">
             <nav aria-label="breadcrumb">
@@ -103,23 +88,21 @@
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
     <main class="main-content">
         <div class="container">
-          
-            <!-- CONTENEDOR PRINCIPAL CON FILTROS Y PRODUCTOS -->
             <div class="content-wrapper">
-                <!-- SIDEBAR DE FILTROS (solo visible en desktop) -->
                 <aside class="filters-sidebar">
                     <div class="filters-container">
                         <div class="filters-header">
-                            <h3><i class="fas fa-filter me-2"></i>Filtros</h3>
+                            <div class="justify-content-between d-flex align-items-center">
+                                <img class="filter-img" src="../imagenes/iconos/filtro.png">
+                                <h3>Filtros</h3>
+                            </div>
                             <button class="btn-clear-filters" id="clearFilters">
                                 <i class="fas fa-times me-1"></i>Limpiar
                             </button>
                         </div>
 
-                        <!-- Filtro por Categoría -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#categoryFilter" aria-expanded="true">
                                 <h4>Categoría</h4>
@@ -161,7 +144,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Precio -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#priceFilter" aria-expanded="true">
                                 <h4>Precio</h4>
@@ -193,7 +175,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Material -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#materialFilter" aria-expanded="false">
                                 <h4>Material</h4>
@@ -225,7 +206,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Color -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#colorFilter" aria-expanded="false">
                                 <h4>Color</h4>
@@ -261,7 +241,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Marca -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#brandFilter" aria-expanded="false">
                                 <h4>Marca</h4>
@@ -295,9 +274,7 @@
                     </div>
                 </aside>
 
-                <!-- PRODUCTS GRID -->
                 <div class="products-section">
-                    <!-- Header original para desktop -->
                     <div class="products-header">
                         <div class="results-info">
                             <span id="resultsCount">Mostrando 8 de 31 productos</span>
@@ -314,12 +291,13 @@
                         </div>
                     </div>
 
-                    <!-- Header móvil con filtros (NUEVA SECCIÓN) -->
                     <div class="products-header-mobile">
                         <div class="products-header-left">
                             <button class="filters-toggle-btn" id="filtersToggleBtn" data-bs-toggle="modal" data-bs-target="#filtersModal">
-                                <i class="fas fa-filter"></i>
-                                <span>Filtros</span>
+                                <div class="justify-content-between d-flex align-items-center">
+                                    <img class="filter-img" src="../imagenes/iconos/filtro.png">
+                                    <span>Filtros</span>
+                                </div>
                                 <div class="filters-active-indicator" id="filtersActiveIndicator">0</div>
                             </button>
                             <div class="results-info">
@@ -342,7 +320,6 @@
 
                     <div class="products-grid">
                         <div class="row" id="productsContainer">
-                            <!-- Producto 1 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -350,7 +327,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Despensero con 2 puertas blanco</h3>
-                                        <p class="product-description">Elegante despensero de melamina blanco.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -372,7 +348,6 @@
                                 </div>
                             </div>
 
-                            <!-- Producto 2 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -380,7 +355,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Aereo de 1.20 con vidrio y nicho</h3>
-                                        <p class="product-description">Mueble con acabado natural.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -402,7 +376,6 @@
                                 </div>
                             </div>
 
-                            <!-- Producto 3 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -410,7 +383,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Bajo mesada de 1.20cm</h3>
-                                        <p class="product-description">Práctico mueble de acero inoxidable.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -432,7 +404,6 @@
                                 </div>
                             </div>
 
-                            <!-- Producto 4 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -440,7 +411,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Despensero Alto Modular</h3>
-                                        <p class="product-description">Sistema modular de almacenamiento vertical.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -462,7 +432,6 @@
                                 </div>
                             </div>
 
-                            <!-- Producto 5 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -470,7 +439,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Mueble para Microondas</h3>
-                                        <p class="product-description">Mueble especializado con ventilación integrada.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -492,7 +460,6 @@
                                 </div>
                             </div>
 
-                            <!-- Producto 6 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -500,7 +467,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Barra Desayunadora</h3>
-                                        <p class="product-description">Elegante barra con estructura de acero.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -522,7 +488,6 @@
                                 </div>
                             </div>
 
-                            <!-- Producto 7 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -530,7 +495,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Mueble para Lavaplatos</h3>
-                                        <p class="product-description">Base resistente al agua con sistema de drenaje.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -552,7 +516,6 @@
                                 </div>
                             </div>
 
-                            <!-- Producto 8 -->
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
@@ -560,7 +523,6 @@
                                     </div>
                                     <div class="product-info">
                                         <h3 class="product-title">Vitrina con Puertas de Vidrio</h3>
-                                        <p class="product-description">Elegante vitrina con iluminación LED integrada.</p>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -601,129 +563,118 @@
         </div>
     </main>
 
-   <!-- Footer -->
    <footer class="footer">
-    <div class="container">
-        <!-- Footer principal -->
-        <div class="footer-main">
-            <div class="row g-4">
-                <!-- Información de la empresa -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-section">
-                        <div class="footer-logo">
-                            <img src="../imagenes/iconos/logo2.png" alt="Logo Tienda de Muebles">
-                        </div>
-                        <p class="footer-description">
-                            Transformamos tu hogar con muebles de calidad. Más de 15 años creando espacios únicos y funcionales para toda la familia.
-                        </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+54 264 123-4567</span>
+        <div class="container">
+            <div class="footer-main">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <img src="../imagenes/iconos/logo2.png" alt="Logo Tienda de Muebles">
                             </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>info@tiendademuebles.com</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Av. San Martín 1234, San Juan</span>
+                            <p class="footer-description">
+                                Transformamos tu hogar con muebles de calidad. Más de 15 años creando espacios únicos y funcionales para toda la familia.
+                            </p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+54 264 123-4567</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@tiendademuebles.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Av. San Martín 1234, San Juan</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Enlaces rápidos -->
-                <div class="col-lg-2 col-md-3 col-5">
-                    <div class="footer-section">
-                        <h6 class="footer-title">Categorías</h6>
-                        <ul class="footer-links">
-                            <li><a href="mueblesCocina.html">Línea Cocina</a></li>
-                            <li><a href="mueblesLiving.html">Línea Living</a></li>
-                            <li><a href="#">Línea Comedor</a></li>
-                            <li><a href="#">Línea Dormitorio</a></li>
-                            <li><a href="#">Línea Oficina</a></li>
-                            <li><a href="#ofertas">Ofertas</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Servicio al cliente -->
-                <div class="col-lg-2 col-md-3 col-5">
-                    <div class="footer-section">
-                        <h6 class="footer-title">Ayuda</h6>
-                        <ul class="footer-links">
-                            <li><a href="#">Cómo comprar</a></li>
-                            <li><a href="#">Medios de pago</a></li>
-                            <li><a href="#">Envíos</a></li>
-                            <li><a href="#">Garantía</a></li>
-                            <li><a href="#">Devoluciones</a></li>
-                            <li><a href="#">Contacto</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Redes sociales y newsletter -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-section">
-                        <h6 class="footer-follow-title">Síguenos</h6>
-                        <p class="social-description">Mantente al día con nuestras últimas ofertas y novedades</p>
-                        
-                        <!-- Redes sociales mejoradas -->
-                        <div class="social-networks">
-                            <a href="#" class="social-link facebook" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                                <span>Facebook</span>
-                            </a>
-                            <a href="#" class="social-link instagram" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                                <span>Instagram</span>
-                            </a>
-                            <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
-                                <span>WhatsApp</span>
-                            </a>
-                            <a href="#" class="social-link youtube" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                                <span>YouTube</span>
-                            </a>
+                    <div class="col-lg-2 col-md-3 col-5">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Categorías</h6>
+                            <ul class="footer-links">
+                                <li><a href="mueblesCocina.html">Línea Cocina</a></li>
+                                <li><a href="mueblesLiving.html">Línea Living</a></li>
+                                <li><a href="#">Línea Comedor</a></li>
+                                <li><a href="#">Línea Dormitorio</a></li>
+                                <li><a href="#">Línea Oficina</a></li>
+                                <li><a href="#ofertas">Ofertas</a></li>
+                            </ul>
                         </div>
-
-                        
                     </div>
+
+                    <div class="col-lg-2 col-md-3 col-5">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Ayuda</h6>
+                            <ul class="footer-links">
+                                <li><a href="#">Cómo comprar</a></li>
+                                <li><a href="#">Medios de pago</a></li>
+                                <li><a href="#">Envíos</a></li>
+                                <li><a href="#">Garantía</a></li>
+                                <li><a href="#">Devoluciones</a></li>
+                                <li><a href="#">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-section">
+                            <h6 class="footer-follow-title">Síguenos</h6>
+                            <p class="social-description">Mantente al día con nuestras últimas ofertas y novedades</p>
+                            
+                            <div class="social-networks">
+                                <a href="#" class="social-link facebook" aria-label="Facebook">
+                                    <img src="../imagenes/iconos/facebook.png" alt="Facebook Icon">
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="#" class="social-link instagram" aria-label="Instagram">
+                                    <img src="../imagenes/iconos/instagram.png" alt="Instagram Icon">
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
+                                    <img src="../imagenes/iconos/whatsapp.png" alt="WhatsApp Icon">
+                                    <span>WhatsApp</span>
+                                </a>
+                                <a href="#" class="social-link youtube" aria-label="YouTube">
+                                    <img src="../imagenes/iconos/youtube.png" alt="YouTube Icon">
+                                    <span>YouTube</span>
+                                </a>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    
                 </div>
-                
-            </div>
-            <!-- Certificaciones y métodos de pago -->
-            <div class="payment-methods">
-                <h5 class="payment-title">Métodos de pago</h5>
-                <div class="payment-icons">
-                    <img src="../imagenes/iconos/visa.png"> </img>
-                    <img src="../imagenes/iconos/mastercard.png"> </img>
-                    <img src="../imagenes/iconos/transferencia.png"> </img>
-                    <img src="../imagenes/iconos/efectivo.png"> </img>
+                <div class="payment-methods">
+                    <h5 class="payment-title">Métodos de pago</h5>
+                    <div class="payment-icons">
+                        <img src="../imagenes/iconos/mastercard.png"> </img>
+                        <img src="../imagenes/iconos/transferencia.png"> </img>
+                        <img src="../imagenes/iconos/efectivo.png"> </img>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Footer bottom -->
-        <div class="footer-bottom">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="copyright">&copy; 2024 Tienda de Muebles. Todos los derechos reservados.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-bottom-links">
-                        <a href="#">Términos y condiciones</a>
-                        <a href="#">Política de privacidad</a>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">&copy; 2024 Tienda de Muebles. Todos los derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="#">Términos y condiciones</a>
+                            <a href="#">Política de privacidad</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-    <!-- Modal del Carrito -->
     <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -751,7 +702,7 @@
                     <div class="cart-total w-100 d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Total: $<span id="cartTotal">0</span></h5>
                         <div>
-                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Seguir Comprando</button>
+                            <button type="button" class="btn btn-secondary me-2" id="keepbuy" data-bs-dismiss="modal">Seguir Comprando</button>
                             <button type="button" class="btn btn-primary" id="checkoutBtn" disabled>Finalizar Compra</button>
                         </div>
                     </div>
@@ -760,19 +711,18 @@
         </div>
     </div>
 
-    <!-- Modal de Filtros para Móvil (NUEVO MODAL) -->
     <div class="modal fade filters-modal" id="filtersModal" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="filtersModalLabel">
-                        <i class="fas fa-filter me-2"></i>Filtros
-                    </h5>
+                    <div class="justify-content-between d-flex align-items-center">
+                        <img class="filter-img1" src="../imagenes/iconos/filtro-b.png">
+                        <h5 class="modal-title" id="filtersModalLabel">Filtros</h5>
+                    </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
                     <div class="filters-container">
-                        <!-- Filtro por Categoría -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#categoryFilterModal" aria-expanded="true">
                                 <h4>Categoría</h4>
@@ -814,7 +764,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Precio -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#priceFilterModal" aria-expanded="true">
                                 <h4>Precio</h4>
@@ -846,7 +795,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Material -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#materialFilterModal" aria-expanded="false">
                                 <h4>Material</h4>
@@ -878,7 +826,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Color -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#colorFilterModal" aria-expanded="false">
                                 <h4>Color</h4>
@@ -914,7 +861,6 @@
                             </div>
                         </div>
 
-                        <!-- Filtro por Marca -->
                         <div class="filter-group">
                             <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#brandFilterModal" aria-expanded="false">
                                 <h4>Marca</h4>

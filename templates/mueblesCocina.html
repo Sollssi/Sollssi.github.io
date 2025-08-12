@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muebles de Cocina - Tienda de Muebles</title>
+    <link rel="stylesheet" href="../css/estilos2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../imagenes/iconos/logocorto.png">
+
+    <style>
+        /* Ajustes para el breadcrumb */
+        .breadcrumb-section {
+            background-color: #f5f1ec;
+            border-bottom: 1px solid #e8ddd0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra promocional -->
+    <div class="promo-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="promo-text">
+                        3 y 6 cuotas sin interés con todos los bancos | 15% OFF en transferencias
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+   <header>
+   <div class="header-container">
+        <!-- Menú hamburguesa (solo visible en móvil) -->
+        <button class="hamburger-menu d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Logo centrado en móvil -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="../imagenes/iconos/logo2.png" alt="Logo Tienda de Muebles">
+            </a>
+        </div>
+        
+       <!-- Navegación colapsable -->
+        <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
+            <nav class="nav-menu">
+                <a href="#">Línea Cocina</a>
+                <a href="#">Línea Living</a>
+                <a href="#">Línea Comedor</a>
+                <a href="#">Línea Dormitorio</a>
+                <a href="#">Línea Oficina</a>
+                <a href="#ofertas">Ofertas</a>
+            </nav>
+        </div>
+
+        <!-- Buscador (solo en desktop) -->
+        <div class="search-container d-none d-lg-flex">
+            <input type="text" placeholder="Buscar productos..." class="search-bar">
+            <img src="../imagenes/iconos/simbolo-de-la-interfaz-de-busqueda.png" alt="Buscar" class="search-icon">
+        </div>
+
+         <!-- Iconos móviles (buscador + carrito) -->
+         <div class="mobile-icons d-lg-none">
+            <div class="search-icon-mobile" data-bs-toggle="modal" data-bs-target="#searchModal">
+                <img src="../imagenes/iconos/simbolo-de-la-interfaz-de-busqueda.png" alt="Buscar">
+            </div>
+            <div class="cart-section-mobile" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <div class="cart-icon">
+                    <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                </div>
+                <span class="cart-count" id="cartCountMobile">0</span>
+            </div>
+        </div>
+
+        <!-- Carrito desktop -->
+        <div class="cart-container d-none d-lg-flex">
+            <div class="cart-section" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <div class="cart-icon">
+                    <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                </div>
+                <span class="cart-text">Carrito</span>
+                <span class="cart-count" id="cartCountDesktop">0</span>
+            </div>
+        </div>
+    </div>
+</header>
+    <!-- BREADCRUMB -->
+    <section class="breadcrumb-section">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#categorias">Muebles</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Muebles de Cocina</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        <div class="container">
+          
+            <!-- CONTENEDOR PRINCIPAL CON FILTROS Y PRODUCTOS -->
+            <div class="content-wrapper">
+                <!-- SIDEBAR DE FILTROS (solo visible en desktop) -->
+                <aside class="filters-sidebar">
+                    <div class="filters-container">
+                        <div class="filters-header">
+                            <h3><i class="fas fa-filter me-2"></i>Filtros</h3>
+                            <button class="btn-clear-filters" id="clearFilters">
+                                <i class="fas fa-times me-1"></i>Limpiar
+                            </button>
+                        </div>
+
+                        <!-- Filtro por Categoría -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#categoryFilter" aria-expanded="true">
+                                <h4>Categoría</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse show" id="categoryFilter">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="alacenas">
+                                        <span class="checkmark"></span>
+                                        Alacenas
+                                        <small>(15)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="islas">
+                                        <span class="checkmark"></span>
+                                        Islas de Cocina
+                                        <small>(8)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="muebles-bajo">
+                                        <span class="checkmark"></span>
+                                        Muebles Bajos
+                                        <small>(12)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="despenseros">
+                                        <span class="checkmark"></span>
+                                        Despenseros
+                                        <small>(10)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="organizadores">
+                                        <span class="checkmark"></span>
+                                        Organizadores
+                                        <small>(6)</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Precio -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#priceFilter" aria-expanded="true">
+                                <h4>Precio</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse show" id="priceFilter">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="0-500">
+                                        <span class="checkmark"></span>
+                                        $0 - $500
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="500-1000">
+                                        <span class="checkmark"></span>
+                                        $500 - $1,000
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="1000-2000">
+                                        <span class="checkmark"></span>
+                                        $1,000 - $2,000
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="2000+">
+                                        <span class="checkmark"></span>
+                                        Más de $2,000
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Material -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#materialFilter" aria-expanded="false">
+                                <h4>Material</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="materialFilter">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="madera">
+                                        <span class="checkmark"></span>
+                                        Madera
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="melamina">
+                                        <span class="checkmark"></span>
+                                        Melamina
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="acero">
+                                        <span class="checkmark"></span>
+                                        Acero
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="vidrio">
+                                        <span class="checkmark"></span>
+                                        Vidrio
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Color -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#colorFilter" aria-expanded="false">
+                                <h4>Color</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="colorFilter">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="blanco">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #ffffff; border: 1px solid #ddd;"></span>
+                                        Blanco
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="negro">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #333333;"></span>
+                                        Negro
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="roble">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #d4a574;"></span>
+                                        Roble
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="cerezo">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #8B4513;"></span>
+                                        Cerezo
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Marca -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#brandFilter" aria-expanded="false">
+                                <h4>Marca</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="brandFilter">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="moderna">
+                                        <span class="checkmark"></span>
+                                        Moderna Home
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="elegante">
+                                        <span class="checkmark"></span>
+                                        Elegante Design
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="premium">
+                                        <span class="checkmark"></span>
+                                        Premium Kitchen
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="funcional">
+                                        <span class="checkmark"></span>
+                                        Funcional Plus
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- PRODUCTS GRID -->
+                <div class="products-section">
+                    <!-- Header original para desktop -->
+                    <div class="products-header">
+                        <div class="results-info">
+                            <span id="resultsCount">Mostrando 8 de 31 productos</span>
+                        </div>
+                        <div class="sort-options">
+                            <select class="form-select" id="sortBy">
+                                <option value="default">Ordenar por</option>
+                                <option value="price-low">Precio: Menor a Mayor</option>
+                                <option value="price-high">Precio: Mayor a Menor</option>
+                                <option value="name">Nombre A-Z</option>
+                                <option value="newest">Más Nuevos</option>
+                                <option value="popular">Más Populares</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Header móvil con filtros (NUEVA SECCIÓN) -->
+                    <div class="products-header-mobile">
+                        <div class="products-header-left">
+                            <button class="filters-toggle-btn" id="filtersToggleBtn" data-bs-toggle="modal" data-bs-target="#filtersModal">
+                                <i class="fas fa-filter"></i>
+                                <span>Filtros</span>
+                                <div class="filters-active-indicator" id="filtersActiveIndicator">0</div>
+                            </button>
+                            <div class="results-info">
+                                <span id="resultsCountMobile">Mostrando 8 de 31 productos</span>
+                            </div>
+                        </div>
+                        <div class="products-header-right">
+                            <div class="sort-options">
+                                <select class="form-select" id="sortByMobile">
+                                    <option value="default">Ordenar por</option>
+                                    <option value="price-low">Precio: Menor a Mayor</option>
+                                    <option value="price-high">Precio: Mayor a Menor</option>
+                                    <option value="name">Nombre A-Z</option>
+                                    <option value="newest">Más Nuevos</option>
+                                    <option value="popular">Más Populares</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="products-grid">
+                        <div class="row" id="productsContainer">
+                            <!-- Producto 1 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/Despensero.webp" alt="Despensero">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Despensero con 2 puertas blanco</h3>
+                                        <p class="product-description">Elegante despensero de melamina blanco.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 120999, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 2 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/aereo 1.20 vidrio y nicho.jpg" alt="aereo cocina">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Aereo de 1.20 con vidrio y nicho</h3>
+                                        <p class="product-description">Mueble con acabado natural.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 899, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 3 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/bajo mesada 1.20 acero inox.jpg" alt="Mueble Bajo Cocina">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Bajo mesada de 1.20cm</h3>
+                                        <p class="product-description">Práctico mueble de acero inoxidable.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 899, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 4 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/mueble portamicroondas 2 puertas.webp" alt="Despensero Alto">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Despensero Alto Modular</h3>
+                                        <p class="product-description">Sistema modular de almacenamiento vertical.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 899, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 5 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/banqueta tulip white.webp" alt="Mueble para Microondas">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Mueble para Microondas</h3>
+                                        <p class="product-description">Mueble especializado con ventilación integrada.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 899, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 6 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/alacena 1.20 nicho y listones.jpg" alt="Barra Desayunadora">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Barra Desayunadora</h3>
+                                        <p class="product-description">Elegante barra con estructura de acero.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 899, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 7 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/Kit cocina triple acero.jpg" alt="Mueble Lavaplatos">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Mueble para Lavaplatos</h3>
+                                        <p class="product-description">Base resistente al agua con sistema de drenaje.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 899, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Producto 8 -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="product-card">
+                                    <div class="product-image">
+                                        <img src="../imagenes/productos/cocina/mueble portamicroondas 2 puertas.webp" alt="Vitrina Cocina">
+                                    </div>
+                                    <div class="product-info">
+                                        <h3 class="product-title">Vitrina con Puertas de Vidrio</h3>
+                                        <p class="product-description">Elegante vitrina con iluminación LED integrada.</p>
+                                        <div class="product-price">
+                                            <span class="price-current">$120.299</span>
+                                            <br>
+                                            <span class="efectivo">$96.239,20 en efectivo</span>
+                                            <br>
+                                            <span class="price-original">9 x 13.366,55 sin interés</span>
+                                        </div>
+                                        <div class="product-actions">
+                                            <button class="buy-button" onclick="addToCart({
+                                                id: 5, 
+                                                title: 'Kit cocina triple acero', 
+                                                price: 899, 
+                                                image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                                                })">
+                                                Agregar al Carrito
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pagination-wrapper">
+                    <div class="pagination-simple">
+                        <button class="btn btn-outline-secondary">
+                            <img src="../imagenes/iconos/atras.png" alt="">
+                        </button>
+                        <button class="btn btn-success">1</button>
+                        <span>/</span>
+                        <button class="btn btn-outline-secondary">9</button>
+                        <button class="btn btn-outline-secondary">
+                            <img src="../imagenes/iconos/adelante.png" alt="">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <!-- Footer principal -->
+        <div class="footer-main">
+            <div class="row g-4">
+                <!-- Información de la empresa -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <img src="../imagenes/iconos/logo2.png" alt="Logo Tienda de Muebles">
+                        </div>
+                        <p class="footer-description">
+                            Transformamos tu hogar con muebles de calidad. Más de 15 años creando espacios únicos y funcionales para toda la familia.
+                        </p>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+54 264 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@tiendademuebles.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Av. San Martín 1234, San Juan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="col-lg-2 col-md-3 col-5">
+                    <div class="footer-section">
+                        <h6 class="footer-title">Categorías</h6>
+                        <ul class="footer-links">
+                            <li><a href="mueblesCocina.html">Línea Cocina</a></li>
+                            <li><a href="mueblesLiving.html">Línea Living</a></li>
+                            <li><a href="#">Línea Comedor</a></li>
+                            <li><a href="#">Línea Dormitorio</a></li>
+                            <li><a href="#">Línea Oficina</a></li>
+                            <li><a href="#ofertas">Ofertas</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Servicio al cliente -->
+                <div class="col-lg-2 col-md-3 col-5">
+                    <div class="footer-section">
+                        <h6 class="footer-title">Ayuda</h6>
+                        <ul class="footer-links">
+                            <li><a href="#">Cómo comprar</a></li>
+                            <li><a href="#">Medios de pago</a></li>
+                            <li><a href="#">Envíos</a></li>
+                            <li><a href="#">Garantía</a></li>
+                            <li><a href="#">Devoluciones</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Redes sociales y newsletter -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-section">
+                        <h6 class="footer-follow-title">Síguenos</h6>
+                        <p class="social-description">Mantente al día con nuestras últimas ofertas y novedades</p>
+                        
+                        <!-- Redes sociales mejoradas -->
+                        <div class="social-networks">
+                            <a href="#" class="social-link facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </a>
+                            <a href="#" class="social-link instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>WhatsApp</span>
+                            </a>
+                            <a href="#" class="social-link youtube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                                <span>YouTube</span>
+                            </a>
+                        </div>
+
+                        
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Certificaciones y métodos de pago -->
+            <div class="payment-methods">
+                <h5 class="payment-title">Métodos de pago</h5>
+                <div class="payment-icons">
+                    <img src="../imagenes/iconos/visa.png"> </img>
+                    <img src="../imagenes/iconos/mastercard.png"> </img>
+                    <img src="../imagenes/iconos/transferencia.png"> </img>
+                    <img src="../imagenes/iconos/efectivo.png"> </img>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer bottom -->
+        <div class="footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="copyright">&copy; 2024 Tienda de Muebles. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-bottom-links">
+                        <a href="#">Términos y condiciones</a>
+                        <a href="#">Política de privacidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- Modal del Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">
+                        <div class="cart-icon-header">
+                            <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                            Mi carrito
+                        </div>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="cartItems">
+                        <div class="empty-cart text-center py-4">
+                            <div class="cart-icon-modal">
+                                <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                            </div>
+                            <h4>Tu carrito está vacío</h4>
+                            <p class="text-muted">Agrega productos para comenzar tu compra</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="cart-total w-100 d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Total: $<span id="cartTotal">0</span></h5>
+                        <div>
+                            <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Seguir Comprando</button>
+                            <button type="button" class="btn btn-primary" id="checkoutBtn" disabled>Finalizar Compra</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Filtros para Móvil (NUEVO MODAL) -->
+    <div class="modal fade filters-modal" id="filtersModal" tabindex="-1" aria-labelledby="filtersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="filtersModalLabel">
+                        <i class="fas fa-filter me-2"></i>Filtros
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="filters-container">
+                        <!-- Filtro por Categoría -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#categoryFilterModal" aria-expanded="true">
+                                <h4>Categoría</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse show" id="categoryFilterModal">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="alacenas">
+                                        <span class="checkmark"></span>
+                                        Alacenas
+                                        <small>(15)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="islas">
+                                        <span class="checkmark"></span>
+                                        Islas de Cocina
+                                        <small>(8)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="muebles-bajo">
+                                        <span class="checkmark"></span>
+                                        Muebles Bajos
+                                        <small>(12)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="despenseros">
+                                        <span class="checkmark"></span>
+                                        Despenseros
+                                        <small>(10)</small>
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="category" value="organizadores">
+                                        <span class="checkmark"></span>
+                                        Organizadores
+                                        <small>(6)</small>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Precio -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#priceFilterModal" aria-expanded="true">
+                                <h4>Precio</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse show" id="priceFilterModal">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="0-500">
+                                        <span class="checkmark"></span>
+                                        $0 - $500
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="500-1000">
+                                        <span class="checkmark"></span>
+                                        $500 - $1,000
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="1000-2000">
+                                        <span class="checkmark"></span>
+                                        $1,000 - $2,000
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="price" value="2000+">
+                                        <span class="checkmark"></span>
+                                        Más de $2,000
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Material -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#materialFilterModal" aria-expanded="false">
+                                <h4>Material</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="materialFilterModal">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="madera">
+                                        <span class="checkmark"></span>
+                                        Madera
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="melamina">
+                                        <span class="checkmark"></span>
+                                        Melamina
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="acero">
+                                        <span class="checkmark"></span>
+                                        Acero
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="material" value="vidrio">
+                                        <span class="checkmark"></span>
+                                        Vidrio
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Color -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#colorFilterModal" aria-expanded="false">
+                                <h4>Color</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="colorFilterModal">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="blanco">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #ffffff; border: 1px solid #ddd;"></span>
+                                        Blanco
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="negro">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #333333;"></span>
+                                        Negro
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="roble">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #d4a574;"></span>
+                                        Roble
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="color" value="cerezo">
+                                        <span class="checkmark"></span>
+                                        <span class="color-sample" style="background-color: #8B4513;"></span>
+                                        Cerezo
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filtro por Marca -->
+                        <div class="filter-group">
+                            <div class="filter-header" data-bs-toggle="collapse" data-bs-target="#brandFilterModal" aria-expanded="false">
+                                <h4>Marca</h4>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="collapse" id="brandFilterModal">
+                                <div class="filter-options">
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="moderna">
+                                        <span class="checkmark"></span>
+                                        Moderna Home
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="elegante">
+                                        <span class="checkmark"></span>
+                                        Elegante Design
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="premium">
+                                        <span class="checkmark"></span>
+                                        Premium Kitchen
+                                    </label>
+                                    <label class="filter-option">
+                                        <input type="checkbox" name="brand" value="funcional">
+                                        <span class="checkmark"></span>
+                                        Funcional Plus
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-clear-filters" id="clearFiltersMobile">
+                        <i class="fas fa-times me-1"></i>Limpiar
+                    </button>
+                    <button type="button" class="btn-apply-filters" id="applyFilters" data-bs-dismiss="modal">
+                        Aplicar Filtros
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/script.js"></script>
+</body>
+</html>

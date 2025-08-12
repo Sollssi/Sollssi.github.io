@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Muebles</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../imagenes/iconos/logocorto.png">
+
+</head>
+<body>
+    <div class="promo-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <span class="promo-text">
+                        3 y 6 cuotas sin interés con todos los bancos | 15% OFF en transferencias
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header>
+       <div class="header-container">
+            <!-- Logo centrado en móvil -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="../imagenes/iconos/logo2.png" alt="Logo Tienda de Muebles">
+                </a>
+            </div>
+            
+            <!-- Menú hamburguesa (solo visible en móvil) -->
+            <button class="hamburger-menu d-lg-none mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="../imagenes/iconos/hamburguesa.png"></img>
+                
+            </button>
+           <!-- Navegación colapsable -->
+            <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
+                <nav class="nav-menu">
+                    <a href="#">Línea Cocina</a>
+                    <a href="#">Línea Living</a>
+                    <a href="#">Línea Comedor</a>
+                    <a href="#">Línea Dormitorio</a>
+                    <a href="#">Línea Oficina</a>
+                    <a href="#ofertas">Ofertas</a>
+                </nav>
+            </div>
+
+            <!-- Buscador (solo en desktop) -->
+            <div class="search-container d-none d-lg-flex">
+                <input type="text" placeholder="Buscar productos..." class="search-bar">
+                <img src="../imagenes/iconos/simbolo-de-la-interfaz-de-busqueda.png" alt="Buscar" class="search-icon">
+            </div>
+
+            <!-- Iconos móviles (buscador + carrito) -->
+            <div class="mobile-icons d-lg-none">
+                <div class="search-icon-mobile" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <img src="../imagenes/iconos/simbolo-de-la-interfaz-de-busqueda.png" alt="Buscar">
+                </div>
+                <div class="cart-section-mobile" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <div class="cart-icon">
+                        <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                    </div>
+                    <span class="cart-count" id="cartCountMobile">0</span>
+                </div>
+            </div>
+
+            <!-- Carrito desktop -->
+            <div class="cart-container d-none d-lg-flex">
+                <div class="cart-section" data-bs-toggle="modal" data-bs-target="#cartModal">
+                    <div class="cart-icon">
+                        <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                    </div>
+                    <span class="cart-text">Carrito</span>
+                    <span class="cart-count" id="cartCountDesktop">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main>
+        <!-- Carousel Section -->
+        <section class="carousel-section">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../imagenes/carrusel/cocina.png" class="d-block w-100" alt="Cocina">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagenes/carrusel/comedor.png" class="d-block w-100" alt="Dormitorio">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagenes/carrusel/living.png" class="d-block w-100" alt="Comedor">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagenes/carrusel/oficina.png" class="d-block w-100" alt="Living">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagenes/carrusel/dormitorio.png" class="d-block w-100" alt="Oficina">
+                    </div>
+                </div>
+                
+              <div class="carousel-overlay">
+                <div class="overlay-card">
+                    <a href="#benefits" class="btn-explore">Explorar Colección</a>
+                </div>
+                </div>
+
+                
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="benefits">
+            <div class="container-fluid">
+                <div class="row g-0">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <img src="../imagenes/iconos/entrega-rapida.png" alt="camion de entrega">
+                            </div>
+                            <div class="benefit-title">ENVÍOS A TODO EL PAÍS</div>
+                            <div class="benefit-subtitle">GRATIS SAN JUAN Y ALREDEDORES</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <img src="../imagenes/iconos/tarjetas-de-debito.png" alt="tarjetas">
+                            </div>
+                            <div class="benefit-title">3 Y 6 CUOTAS SIN INTERÉS</div>
+                            <div class="benefit-subtitle">TODOS LOS BANCOS</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <img src="../imagenes/iconos/bolsa-de-la-compra.png" alt="garantia">
+                            </div>
+                            <div class="benefit-title">18 MESES DE GARANTÍA</div>
+                            <div class="benefit-subtitle">TODOS LOS PRODUCTOS</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <img src="../imagenes/iconos/15-por-ciento.png" alt="descuento">
+                            </div>
+                            <div class="benefit-title">15% DE DESCUENTO</div>
+                            <div class="benefit-subtitle">TRANSFERENCIA O DEPÓSITO</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="categorias" class="categories-section">             
+    <div class="container-fluid">                 
+        <div class="row">                     
+            <div class="col-12">                         
+                <h2 class="section-title">Nuestras Categorías</h2>                     
+            </div>                 
+        </div>                                  
+        
+        <!-- Grid de 5 columnas usando Bootstrap -->                 
+        <div class="row g-4 justify-content-center">                     
+            <!-- Living -->                     
+            <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-6 col-6">                       
+                <a href="mueblesLiving.html" class="category-card d-block" data-bg="../imagenes/fondos/living new.webp">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">                            
+                        <h4>Living</h4>                             
+                        
+                    </div>                         
+                </a>                     
+            </div>                                          
+            
+            <!-- Te amo <3 yo mas mi negro lindo <3-->
+
+            <!-- Comedor -->                     
+            <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-6 col-6">                       
+                <a href="mueblesComedor.html" class="category-card d-block" data-bg="../imagenes/fondos/comedor.webp">
+
+                    <div class="card-overlay"></div>
+                    <div class="card-content">                        
+                        <h4>Comedor</h4>                             
+                    </div>                         
+                </a>                     
+            </div>                                          
+            
+            <!-- Cocina -->                     
+            <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-6 col-6">                        
+                <a href="mueblesCocina.html" class="category-card d-block" data-bg="../imagenes/fondos/cocina fondo.webp">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">                            
+                        <h4>Cocina</h4>                             
+                    </div>                         
+                </a>                     
+            </div>                                          
+            
+            <!-- Dormitorio -->                     
+            <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-6 col-6">
+                    <a href="mueblesDormitorio.html" class="category-card d-block" data-bg="../imagenes/fondos/dormitorio.webp">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">                           
+                        <h4>Dormitorio</h4>                             
+                    </div>                         
+                </a>                     
+            </div>                                          
+            
+            <!-- Oficina -->                     
+            <div class="col-xxl-2 col-xl-2 col-lg-4 col-md-6 col-6">                        
+                <a href="mueblesOficina.html" class="category-card d-block" data-bg="../imagenes/fondos/oficina carta.webp">
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <h4>Oficina</h4>                             
+                    </div>                         
+                </a>                     
+            </div>                 
+        </div>             
+    </div>         
+</section>
+
+        <!-- Offers Section -->
+<section id="ofertas" class="section offers">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title">Ofertas <span class="text-gradient">Especiales</span></h2>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/cocina/kit de cocina alfa 1.40cm.webp" alt="Sofá Moderno" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Kit de cocina alfa 1.40cm</h5>
+                    <div class="price-container">
+                        <span class="current-price">$499.999</span>
+                        <br>
+                        <span class="old-price">9 x $55.555 sin interés</span>
+                        <br>
+                        <span class="efectivo">424.999,15 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 1, 
+                        title: 'Kit de cocina alfa 1.40cm', 
+                        price: 499999, 
+                        image: '../imagenes/productos/cocina/kit de cocina alfa 1.40cm.webp'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/cocina/Kit cocina triple acero.jpg" alt="Kit Cocina Triple Acero" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Kit cocina triple acero</h5>
+                    <div class="price-container">
+                        <span class="current-price">$899.000</span>
+                        <br>
+                        <span class="old-price">9 x $99.999 sin interés</span>
+                        <br>
+                        <span class="efectivo"> 764.999,15 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 2, 
+                        title: 'Kit cocina triple acero', 
+                        price: 899999, 
+                        image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/cocina/bajo mesada 160cm 2 puertas 1 cajon.webp" alt="Bajo mesada" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Bajo mesada de 160cm</h5>
+                    <div class="price-container">
+                        <span class="current-price">$469.999</span>
+                        <br>
+                        <span class="old-price">9 x $52.222 sin interés</span>
+                        <br>
+                        <span class="efectivo">399.499,15 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 3, 
+                        title: 'Bajo mesada de 160cm', 
+                        price: 469999, 
+                        image: '../imagenes/productos/cocina/bajo mesada 160cm 2 puertas 1 cajon.webp'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/comedor/mesa-fija-lisa-140-4-sillas-en-chenille-600x600.jpg" alt="Mesa con sillas" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Mesa fija lisa con 4 sillas</h5>
+                    <div class="price-container">
+                        <span class="current-price">$899.999</span>
+                        <br>
+                        <span class="old-price">9 x $99.999 sin interés</span>
+                        <br>
+                        <span class="efectivo">764.999,15 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 4, 
+                        title: 'Mesa fija lisa con 4 sillas en chenille', 
+                        price: 899999, 
+                        image: '../imagenes/productos/comedor/mesa-fija-lisa-140-4-sillas-en-chenille-600x600.jpg'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/living/sillon recrinable marron.jpg" alt="Sillón reclinable" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Sillon reclinable marron</h5>
+                    <div class="price-container">
+                        <span class="current-price">$799.999</span>
+                        <br>
+                        <span class="old-price">9 x $888.888 sin interés</span>
+                        <br>
+                        <span class="efectivo">679.999,15 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 5, 
+                        title: 'Sillon reclinable marron', 
+                        price: 799999, 
+                        image: '../imagenes/productos/living/sillon recrinable marron.jpg'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/dormitorio/comoda evidenza flex.jpg" alt="comoda evidenza flex" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Comoda Evidenza flex</h5>
+                    <div class="price-container">
+                        <span class="current-price">$275.999</span>
+                        <br>
+                        <span class="old-price">9 x $30.666 sin interés</span>
+                        <br>
+                        <span class="efectivo">220.079,20 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 6, 
+                        title: 'Comoda Evidenza flex', 
+                        price: 275999, 
+                        image: '../imagenes/productos/dormitorio/comoda evidenza flex.jpg'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/dormitorio/Comoda-Doble-Freijo-e-Titanium-Infinito-1-600x600.jpg" alt="comoda doble" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Comoda Doble Freijo Titanium</h5>
+                    <div class="price-container">
+                        <span class="current-price">$275.999</span>
+                        <br>
+                        <span class="old-price">9 x $30.666 sin interés</span>
+                        <br>
+                        <span class="efectivo">220.779,20 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 7, 
+                        title: 'Comoda Doble Freijo Titanium', 
+                        price: 275999, 
+                        image: '../imagenes/productos/dormitorio/Comoda-Doble-Freijo-e-Titanium-Infinito-1-600x600.jpg'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-6 col-6">
+                <div class="discount-card">
+                    <img src="../imagenes/productos/comedor/Mesa adriana 1.80 vidrio + 6 sillas eloa.jpg" alt="mesa adriana" class="img-fluid">
+                    <div class="product-badge">Oferta</div>
+                    <h5 class="product-title">Mesa Adriana 1.80 + 6 sillas</h5>
+                    <div class="price-container">
+                        <span class="current-price">$1.275.999</span>
+                        <br>
+                        <span class="old-price">9 x $141.777 sin interés</span>
+                        <br>
+                        <span class="efectivo">1.084.599,15 en efectivo</span>
+                    </div>
+                    <button class="buy-button" onclick="addToCart({
+                        id: 8, 
+                        title: 'Mesa Adriana 1.80 + 6 sillas', 
+                        price: 1275999, 
+                        image: '../imagenes/productos/comedor/Mesa adriana 1.80 vidrio + 6 sillas eloa.jpg'
+                        })">
+                        Agregar al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Newsletter Section -->
+        <section class="section newsletter">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="section-title">Suscríbete al Newsletter</h2>
+                        <p class="newsletter-description">Recibe las mejores ofertas y novedades directamente en tu email</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Ingresa tu email" aria-label="Email">
+                            <button class="submit-button" type="button">Suscribirse</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Footer principal -->
+            <div class="footer-main">
+                <div class="row g-4">
+                    <!-- Información de la empresa -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-section">
+                            <div class="footer-logo">
+                                <img src="../imagenes/iconos/logo2.png" alt="Logo Tienda de Muebles">
+                            </div>
+                            <p class="footer-description">
+                                Transformamos tu hogar con muebles de calidad. Más de 15 años creando espacios únicos y funcionales para toda la familia.
+                            </p>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+54 264 123-4567</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@tiendademuebles.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Av. San Martín 1234, San Juan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Enlaces rápidos -->
+                    <div class="col-lg-2 col-md-3 col-5">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Categorías</h6>
+                            <ul class="footer-links">
+                                <li><a href="mueblesCocina.html">Línea Cocina</a></li>
+                                <li><a href="mueblesLiving.html">Línea Living</a></li>
+                                <li><a href="#">Línea Comedor</a></li>
+                                <li><a href="#">Línea Dormitorio</a></li>
+                                <li><a href="#">Línea Oficina</a></li>
+                                <li><a href="#ofertas">Ofertas</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Servicio al cliente -->
+                    <div class="col-lg-2 col-md-3 col-5">
+                        <div class="footer-section">
+                            <h6 class="footer-title">Ayuda</h6>
+                            <ul class="footer-links">
+                                <li><a href="#">Cómo comprar</a></li>
+                                <li><a href="#">Medios de pago</a></li>
+                                <li><a href="#">Envíos</a></li>
+                                <li><a href="#">Garantía</a></li>
+                                <li><a href="#">Devoluciones</a></li>
+                                <li><a href="#">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Redes sociales y newsletter -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-section">
+                            <h6 class="footer-follow-title">Síguenos</h6>
+                            <p class="social-description">Mantente al día con nuestras últimas ofertas y novedades</p>
+                            
+                            <!-- Redes sociales mejoradas -->
+                            <div class="social-networks">
+                                <a href="#" class="social-link facebook" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                    <span>Facebook</span>
+                                </a>
+                                <a href="#" class="social-link instagram" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                                <a href="#" class="social-link whatsapp" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>WhatsApp</span>
+                                </a>
+                                <a href="#" class="social-link youtube" aria-label="YouTube">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>YouTube</span>
+                                </a>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+                <!-- Certificaciones y métodos de pago -->
+                <div class="payment-methods">
+                    <h5 class="payment-title">Métodos de pago</h5>
+                    <div class="payment-icons">
+                        <img src="../imagenes/iconos/visa.png"> </img>
+                        <img src="../imagenes/iconos/mastercard.png"> </img>
+                        <img src="../imagenes/iconos/transferencia.png"> </img>
+                        <img src="../imagenes/iconos/efectivo.png"> </img>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer bottom -->
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">&copy; 2024 Tienda de Muebles. Todos los derechos reservados.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="#">Términos y condiciones</a>
+                            <a href="#">Política de privacidad</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Modal del Carrito -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">
+                    <div class="cart-icon-header">
+                        <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                        Mi carrito
+                    </div>
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="cartItems">
+                    <div class="empty-cart text-center py-4">
+                        <div class="cart-icon-modal">
+                            <img src="../imagenes/iconos/carrito-de-compras.png" alt="Carrito de compras">
+                        </div>
+                        <h4>Tu carrito está vacío</h4>
+                        <p class="text-muted">Agrega productos para comenzar tu compra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="cart-total w-100 d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Total: $<span id="cartTotal">0</span></h5>
+                    <div>
+                        <button type="button" class="btn btn-secondary me-2" id="keepbuy" data-bs-dismiss="modal">Seguir Comprando</button>
+                        <button type="button" class="btn btn-primary" id="checkoutBtn" disabled>Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal de Búsqueda -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-top">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">
+                    <i class="fas fa-search me-2"></i>Buscar Productos
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="search-input-container">
+                    <input type="text" placeholder="¿Qué estás buscando?" class="form-control search-input-mobile">
+                    <button class="btn btn-primary search-btn-mobile">Buscar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../script/script.js"></script>
+    </body>
+</html>

@@ -23,9 +23,9 @@ function updateCartCount() {
 }
 
 // Agregar producto al carrito
-function addToCart(product) {
+function addToCart(product, buttonElement) {
     const existingItem = cart.find(item => item.id === product.id);
-    
+
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
@@ -36,13 +36,21 @@ function addToCart(product) {
             image: product.image,
             quantity: 1
         });
-
     }
-    
+
     updateCartCount();
     updateCartDisplay();
 
+    // Cambiar texto del botón
+    const originalText = buttonElement.textContent;
+    buttonElement.textContent = "¡Artículo agregado!";
+    buttonElement.disabled = true; // Evita clics repetidos durante el cambio
+    setTimeout(() => {
+        buttonElement.textContent = originalText;
+        buttonElement.disabled = false;
+    }, 2000);
 }
+
 
 // Actualizar display del carrito en el modal
 function updateCartDisplay() {

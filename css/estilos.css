@@ -1156,6 +1156,18 @@ header {
         flex-wrap: wrap;
     }
 
+    .search-input-container button {
+        background-color: var(--primary-color);
+        color: var(--white);
+        border: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+    
+
     .promo-bar {
         font-size: 0.8rem;
         padding: 0.4rem 0;

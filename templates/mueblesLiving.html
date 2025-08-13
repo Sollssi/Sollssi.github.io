@@ -38,9 +38,7 @@
             </div>
             
             <button class="hamburger-menu d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
+                <img src="../imagenes/iconos/hamburguesa.png"></img>
             </button>
 
             <div class="collapse navbar-collapse d-lg-flex" id="navbarNav">
@@ -347,7 +345,7 @@
                                                 title: 'Kit cocina triple acero', 
                                                 price: 120999, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                }, this)">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -374,9 +372,9 @@
                                             <button class="buy-button" onclick="addToCart({
                                                 id: 5, 
                                                 title: 'Kit cocina triple acero', 
-                                                price: 899, 
+                                                price: 120999, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                }, this)">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -403,9 +401,9 @@
                                             <button class="buy-button" onclick="addToCart({
                                                 id: 5, 
                                                 title: 'Kit cocina triple acero', 
-                                                price: 899, 
+                                                price: 120999, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                }, this)">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -434,7 +432,7 @@
                                                 title: 'Kit cocina triple acero', 
                                                 price: 899, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                }, this)">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -463,7 +461,7 @@
                                                 title: 'Kit cocina triple acero', 
                                                 price: 899, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                }, this)">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -492,7 +490,7 @@
                                                 title: 'Kit cocina triple acero', 
                                                 price: 899, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                },this)">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -521,7 +519,7 @@
                                                 title: 'Kit cocina triple acero', 
                                                 price: 899, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                },this)">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -550,7 +548,7 @@
                                                 title: 'Kit cocina triple acero', 
                                                 price: 899, 
                                                 image: '../imagenes/productos/cocina/Kit cocina triple acero.jpg'
-                                                })">
+                                                },this )">
                                                 Agregar al Carrito
                                             </button>
                                         </div>
@@ -716,7 +714,7 @@
                 <div class="modal-footer">
                     <div class="cart-total w-100 d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Total: $<span id="cartTotal">0</span></h5>
-                        <div>
+                        <div class="cart-actions">
                             <button type="button" class="btn btn-secondary me-2" id="keepbuy" data-bs-dismiss="modal">Seguir Comprando</button>
                             <button type="button" class="btn btn-primary" id="checkoutBtn" disabled>Finalizar Compra</button>
                         </div>
@@ -915,6 +913,25 @@
                     <button type="button" class="btn-apply-filters" id="applyFilters" data-bs-dismiss="modal">
                         Aplicar Filtros
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">
+                        <i class="fas fa-search me-2"></i>Buscar Productos
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="search-input-container">
+                        <input type="text" placeholder="¿Qué estás buscando?" class="form-control search-input-mobile">
+                        <button class="search-btn-mobile">Buscar</button>
+                    </div>
                 </div>
             </div>
         </div>

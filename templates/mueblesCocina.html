@@ -26,9 +26,7 @@
    <header>
    <div class="header-container">
         <button class="hamburger-menu d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
+            <img src="../imagenes/iconos/hamburguesa.png"></img>
         </button>
         
         <div class="logo">
@@ -323,10 +321,10 @@
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="../imagenes/productos/cocina/Despensero.webp" alt="Despensero">
+                                        <img src="../imagenes/productos/cocina/despensero.webp" alt="Despensero">
                                     </div>
                                     <div class="product-info">
-                                        <h3 class="product-title">Despensero con 2 puertas blanco</h3>
+                                        <h3 class="product-title">Despensero con 2 puertas marron</h3>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -519,10 +517,10 @@
                             <div class="col-lg-3 col-md-6">
                                 <div class="product-card">
                                     <div class="product-image">
-                                        <img src="../imagenes/productos/cocina/mueble portamicroondas 2 puertas.webp" alt="Vitrina Cocina">
+                                        <img src="../imagenes/productos/cocina/alacena.webp" alt="Alacena doble 100cm">
                                     </div>
                                     <div class="product-info">
-                                        <h3 class="product-title">Vitrina con Puertas de Vidrio</h3>
+                                        <h3 class="product-title">Alacena doble</h3>
                                         <div class="product-price">
                                             <span class="price-current">$120.299</span>
                                             <br>
@@ -701,7 +699,7 @@
                 <div class="modal-footer">
                     <div class="cart-total w-100 d-flex justify-content-between align-items-center">
                         <h5 class="mb-0">Total: $<span id="cartTotal">0</span></h5>
-                        <div>
+                        <div class="cart-actions">
                             <button type="button" class="btn btn-secondary me-2" id="keepbuy" data-bs-dismiss="modal">Seguir Comprando</button>
                             <button type="button" class="btn btn-primary" id="checkoutBtn" disabled>Finalizar Compra</button>
                         </div>
@@ -900,6 +898,25 @@
                     <button type="button" class="btn-apply-filters" id="applyFilters" data-bs-dismiss="modal">
                         Aplicar Filtros
                     </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-top">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">
+                        <i class="fas fa-search me-2"></i>Buscar Productos
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="search-input-container">
+                        <input type="text" placeholder="¿Qué estás buscando?" class="form-control search-input-mobile">
+                        <button class="search-btn-mobile">Buscar</button>
+                    </div>
                 </div>
             </div>
         </div>

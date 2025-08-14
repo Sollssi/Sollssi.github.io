@@ -211,7 +211,7 @@ header {
 }
 
 #checkoutBtn{
-    background: green;
+    background: #EEC06C;
     color: var(--white);
     padding: 0.6rem 1.5rem;
     border: none;
@@ -222,7 +222,7 @@ header {
     font-size: 0.95rem;
 }
 #checkoutBtn:hover{
-    background: darkgreen;
+    background: #eab013;
     color: var(--white);
 }
 

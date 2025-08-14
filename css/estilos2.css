@@ -277,7 +277,7 @@ header {
 }
 
 #checkoutBtn{
-    background: green;
+    background: #EEC06C;
     color: var(--white);
     padding: 0.6rem 1.5rem;
     border: none;
@@ -288,7 +288,7 @@ header {
     font-size: 0.95rem;
 }
 #checkoutBtn:hover{
-    background: darkgreen;
+    background: #eab013;
     color: var(--white);
 }
 
@@ -1228,7 +1228,6 @@ header {
 #searchModal .modal-header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: var(--white);
-    border-radius: 15px 15px 0 0;
 }
 
 #searchModal .btn-close {
